@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>discuss async  && setInterval and setTimeout and clearTimeout</title>
+</head>
+
+<body>
+    <h1>marsad</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    // setInterval(function(){
+    //     console.log("Marsad")
+    // }, 1000);
+
+    // setInterval(function(){
+    //     console.log("Marsad", Date.now())
+    // }, 1000);
+
+    //     const sayDate = function(str){
+    //         console.log(str, Date.now())
+    //     };
+
+    //    const interValid = setTimeout(sayDate,1000,"hi");
+
+    //    clearInterval(interValid);
+
+    let interValid;
+    document.querySelector("#start").addEventListener("click", function () {
+        interValid = setInterval(() => {
+            console.log("marsad", Date.now())
+        }, 1000);
+    });
+    document.querySelector("#stop").addEventListener("click", function () {
+        if (interValid) {
+            clearTimeout(interValid);
+        }
+    }, 1000);
+
+
+</script>
+
+</html>
